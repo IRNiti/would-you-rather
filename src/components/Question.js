@@ -9,7 +9,7 @@ class Question extends Component{
                 <p>{users[question.author].name} asks: </p>
                 <img src={users[question.author].avatarURL} alt={`Avatar of ${users[question.author].name}`} className='avatar'/>
                 <p>Would you rather: </p>
-                <p>{question.optionOne.text}</p>
+                <p>...{question.optionOne.text}...</p>
             </div>
         )
     }
