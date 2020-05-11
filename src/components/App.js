@@ -1,11 +1,35 @@
-import React from 'react'
+import React, { Component } from 'react'
+import { connect } from 'react-redux'
+import { handleInitialData } from '../actions/shared'
 
-function App() {
-  return (
-    <div className="App">
-      Hello World
-    </div>
-  );
+import Login from './Login'
+
+class App extends Component {
+	componentDidMount(){
+		this.props.dispatch(handleInitialData())
+	}
+	render(){
+		return(
+			<div className="App">
+
+				{this.props.loading === true ?
+			        		null :
+			        		<div>
+			        			<p>Would You Rather</p>
+		      					<Login />
+		      					<p>Logged in user is: {this.props.authedUser}</p>
+			        		</div>
+			    }
+		    </div>
+		)
+	}
 }
 
-export default App
+function mapStateToProps({users, authedUser}){
+	return {
+		authedUser,
+		loading: Object.keys(users).length === 0
+	}
+}
+
+export default connect(mapStateToProps)(App)
