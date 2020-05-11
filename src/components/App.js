@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { handleInitialData } from '../actions/shared'
-
 import Login from './Login'
+import QuestionListCont from './QuestionListCont'
 
 class App extends Component {
 	componentDidMount(){
@@ -10,17 +10,17 @@ class App extends Component {
 	}
 	render(){
 		return(
-			<div className="App">
-
+			<div>
 				{this.props.loading === true ?
 			        		null :
 			        		<div>
 			        			<p>Would You Rather</p>
 		      					<Login />
 		      					<p>Logged in user is: {this.props.authedUser}</p>
+								<QuestionListCont />
 			        		</div>
 			    }
-		    </div>
+			</div>
 		)
 	}
 }

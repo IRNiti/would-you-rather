@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import { setAuthedUser } from '../actions/authedUser'
 
 class Login extends Component {
+	// todo: set default state that is not empty
 	state = {
 		authedUser: ''
 	}
@@ -19,6 +20,9 @@ class Login extends Component {
 		event.preventDefault()
 		this.props.dispatch(setAuthedUser(this.state.authedUser))
 	}
+
+	// todo: implement logout and maybe automatically log out users when componentDidMount
+	// logout can be just setting authedUser = ''
 
 	render(){
 		console.log(this.props)
