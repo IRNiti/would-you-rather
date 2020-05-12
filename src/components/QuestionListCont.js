@@ -10,7 +10,6 @@ class QuestionListCont extends Component {
     render(){
         return(
             <div>
-                <p>QuestionListCont</p>
                 <Tabs>
                     <TabList>
                         <Tab>Unanswered</Tab>

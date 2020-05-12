@@ -1,8 +1,10 @@
-import React, { Component } from 'react'
+import React, { Component, Fragment } from 'react'
+import { BrowserRouter as Router, Route } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { handleInitialData } from '../actions/shared'
 import Login from './Login'
 import QuestionListCont from './QuestionListCont'
+import Nav from './Nav'
 
 class App extends Component {
 	componentDidMount(){
@@ -10,17 +12,19 @@ class App extends Component {
 	}
 	render(){
 		return(
-			<div>
-				{this.props.loading === true ?
-			        		null :
-			        		<div>
-			        			<p>Would You Rather</p>
-		      					<Login />
-		      					<p>Logged in user is: {this.props.authedUser}</p>
-								<QuestionListCont />
-			        		</div>
-			    }
-			</div>
+			<Router>
+				<Fragment>
+					<Nav />
+					{this.props.loading === true ?
+								null :
+								<div>
+									<p>Would You Rather</p>
+									<Route path='/' exact component={QuestionListCont}/>
+									<Route path='/login' component={Login}/>
+								</div>
+					}
+				</Fragment>
+			</Router>
 		)
 	}
 }
