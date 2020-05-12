@@ -6,7 +6,7 @@ import { handleInitialData } from '../actions/shared'
 import Login from './Login'
 import QuestionListCont from './QuestionListCont'
 import Nav from './Nav'
-import QuestionVote from './QuestionVote'
+import QuestionCont from './QuestionCont'
 
 class App extends Component {
 	componentDidMount(){
@@ -19,7 +19,7 @@ class App extends Component {
 	render(){
 		const matchInput = {
 			params : {
-				id : '8xf0y6ziyjabvozdd253nd'
+				id : 'loxhs1bqm25b708cmbf3g'
 			}
 		}
 		return(
@@ -31,7 +31,7 @@ class App extends Component {
 								<div>
 									<p>Would You Rather</p>
 									<Login />
-									<QuestionVote match={matchInput}/>
+									<QuestionCont match={matchInput}/>
 									<QuestionListCont />
 								</div>
 					}

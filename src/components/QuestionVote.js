@@ -48,8 +48,7 @@ class QuestionVote extends Component {
     }
 }
 
-function mapStateToProps({questions, users, authedUser}, {match}){
-    const id = match.params.id
+function mapStateToProps({questions, users, authedUser}, {id}){
     return {
         author: users[questions[id].author],
         question: questions[id],
