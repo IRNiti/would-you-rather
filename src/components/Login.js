@@ -3,7 +3,6 @@ import { connect } from 'react-redux'
 import { setAuthedUser } from '../actions/authedUser'
 
 class Login extends Component {
-	// todo: set default state that is not empty
 	state = {
 		authedUser: ''
 	}
@@ -21,16 +20,22 @@ class Login extends Component {
 		this.props.dispatch(setAuthedUser(this.state.authedUser))
 	}
 
-	// todo: implement logout and maybe automatically log out users when componentDidMount
-	// logout can be just setting authedUser = ''
+	componentDidMount() {
+		const { users } = this.props
+		this.setState(() => ({
+			authedUser: users[Object.keys(users)[0]].id
+		}))
+		this.props.dispatch(setAuthedUser(''))
+	}
 
 	render(){
-		console.log(this.props)
+		const { users } = this.props
+		const { authedUser } = this.state
 		return(
 			<form onSubmit={this.login}>
-				<select value={this.state.authedUser} onChange={this.handleChange}>
-					{Object.keys(this.props.users).map((userId) =>(
-						<option value={userId} key={userId}>{this.props.users[userId].name}</option>
+				<select value={authedUser} onChange={this.handleChange}>
+					{Object.keys(users).map((userId) =>(
+						<option value={userId} key={userId}>{users[userId].name}</option>
 						))}
 				</select>
 				<button type='submit'>Submit</button>
