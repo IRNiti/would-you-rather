@@ -18,6 +18,13 @@ code {
   margin: 10px;
 }
 
+.avatar-nav {
+  height: 25px;
+  border-radius: 25px;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
 .nav ul {
   display: flex;
   flex-direction: row;

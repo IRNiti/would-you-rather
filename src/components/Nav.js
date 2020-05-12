@@ -4,6 +4,7 @@ import { NavLink } from 'react-router-dom'
 
 class Nav extends Component {
     render() {
+        const { loggedInUser } = this.props
         return (
             <nav className='nav'>
                 <ul>
@@ -22,10 +23,13 @@ class Nav extends Component {
                             Leaderboard
                         </NavLink>
                     </li>
-                    {this.props.loggedInUser !== '' && (
+                    {loggedInUser !== '' && (
                         <Fragment>
                             <li>
-                                Hello {this.props.loggedInUser}
+                                Hello {loggedInUser.name}
+                            </li>
+                            <li>
+                                <img src={loggedInUser.avatarURL} alt={`Avatar of ${loggedInUser.name}`} className='avatar-nav'/>
                             </li>
                             <li>
                                 <NavLink to='/login' activeClassName='active'>
@@ -42,7 +46,7 @@ class Nav extends Component {
 
 function mapStateToProps({authedUser, users}){
     return {
-        loggedInUser: authedUser ? users[authedUser].name : ''
+        loggedInUser: authedUser ? users[authedUser] : ''
     }
 }
 
