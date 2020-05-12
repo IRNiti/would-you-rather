@@ -1,5 +1,6 @@
 import React, { Component, Fragment } from 'react'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
+import PrivateRoute from './PrivateRoute'
 import { connect } from 'react-redux'
 import { handleInitialData } from '../actions/shared'
 import Login from './Login'
@@ -19,7 +20,7 @@ class App extends Component {
 								null :
 								<div>
 									<p>Would You Rather</p>
-									<Route path='/' exact component={QuestionListCont}/>
+									<PrivateRoute path='/' exact component={QuestionListCont}/>
 									<Route path='/login' component={Login}/>
 								</div>
 					}
