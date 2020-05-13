@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { FormControl, RadioGroup, FormControlLabel, Radio } from '@material-ui/core'
 import { handleSubmitAnswer } from '../actions/questions'
 
 class QuestionVote extends Component {
@@ -30,17 +29,32 @@ class QuestionVote extends Component {
 
         return(
             <div>
-                Question vote:
                 <p>{author.name} asks: </p>
                 <img src={author.avatarURL} alt={`Avatar of ${author.name}`} className='avatar'/>
-                <p>Would you rather: </p>
+                <h3>Would you rather... </h3>
                 <form onSubmit={this.handleSubmit}>
-                    <FormControl component="fieldset">
-                        <RadioGroup aria-label="question" name="question" value={this.state.selection} onChange={this.handleChange}>
-                            <FormControlLabel value="optionOne" control={<Radio />} label={question.optionOne.text} />
-                            <FormControlLabel value="optionTwo" control={<Radio />} label={question.optionTwo.text} />
-                        </RadioGroup>
-                    </FormControl>
+                    <div>
+                    <label>
+                        <input
+                            type="radio"
+                            name="question"
+                            value="optionOne"
+                            onChange={this.handleChange}
+                        />
+                        {question.optionOne.text}
+                    </label>
+                    </div>
+                    <div>
+                    <label>
+                        <input
+                            type="radio"
+                            name="question"
+                            value="optionTwo"
+                            onChange={this.handleChange}
+                        />
+                        {question.optionTwo.text}
+                    </label>
+                    </div>
                     <button type='submit'>Submit</button>
                 </form>
             </div>
