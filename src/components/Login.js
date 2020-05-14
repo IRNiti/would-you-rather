@@ -35,23 +35,23 @@ class Login extends Component {
 		const { users } = this.props
 		const { authedUser } = this.state
 		return(
-			<div className='center tile'>
-				<div className="jumbotron">
-					<div className="container">
-						<h3 className="display-6">Welcome to the Would You Rather App!</h3>
-						<p className="lead">Please sign in to continue</p>
-					</div>
+			<div className="card center">
+				<div className="card-header">
+					<h3>Welcome to the Would You Rather App!</h3>
+					<p>Please sign in to continue</p>
 				</div>
-				<form onSubmit={this.login}>
-					<div>
-						<select value={authedUser} onChange={this.handleChange}>
-							{Object.keys(users).map((userId) =>(
-								<option value={userId} key={userId}>{users[userId].name}</option>
+				<div className="card-body">
+					<form onSubmit={this.login}>
+						<div>
+							<select value={authedUser} onChange={this.handleChange}>
+								{Object.keys(users).map((userId) =>(
+									<option value={userId} key={userId}>{users[userId].name}</option>
 								))}
-						</select>
-					</div>
-					<button type='submit' className='btn btn-info'>Sign In</button>
-				</form>
+							</select>
+						</div>
+						<button type='submit' className='btn btn-info'>Sign In</button>
+					</form>
+				</div>
 			</div>
 			)
 	}
