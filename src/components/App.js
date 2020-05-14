@@ -7,6 +7,8 @@ import Login from './Login'
 import QuestionListCont from './QuestionListCont'
 import Nav from './Nav'
 import QuestionCont from './QuestionCont'
+import NewQuestion from './NewQuestion'
+import Leaderboard from './Leaderboard'
 
 class App extends Component {
 	componentDidMount(){
@@ -31,7 +33,7 @@ class App extends Component {
 								<div>
 									<p>Would You Rather</p>
 									<Login />
-									<QuestionCont match={matchInput}/>
+									<Leaderboard />
 									<QuestionListCont />
 								</div>
 					}

@@ -4,7 +4,6 @@ import Question from './Question'
 
 class QuestionList extends Component {
     render() {
-        console.log(this.props)
         return (
             <div>
                 <p>Question List:</p>
