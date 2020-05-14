@@ -52,3 +52,25 @@ li {
   border-radius: 3px;
   cursor: pointer;
 }
+
+.center {
+  text-align: center;
+}
+
+.btn {
+  text-transform: uppercase;
+  margin: 35px auto;
+  padding: 10px;
+  border: 1px solid rgba(0,0,0,.29);
+  cursor: pointer;
+  background: #fff;
+  font-size: 16px;
+  width: 250px;
+  position: relative;
+}
+
+.tile {
+  margin-left: 25px;
+  margin-right: 25px;
+  border: 1px solid rgba(105, 105, 105, 0.5);
+}

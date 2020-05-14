@@ -31,10 +31,7 @@ class App extends Component {
 					{this.props.loading === true ?
 								null :
 								<div>
-									<p>Would You Rather</p>
 									<Login />
-									<Leaderboard />
-									<QuestionListCont />
 								</div>
 					}
 				</Fragment>
