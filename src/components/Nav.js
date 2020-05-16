@@ -7,7 +7,7 @@ class Nav extends Component {
         const { loggedInUser } = this.props
         return (
             <nav className='nav'>
-                <ul>
+                <ul className='left'>
                     <li>
                         <NavLink to='/' exact activeClassName='active'>
                             Home
@@ -23,22 +23,24 @@ class Nav extends Component {
                             Leaderboard
                         </NavLink>
                     </li>
-                    {loggedInUser !== '' && (
-                        <Fragment>
-                            <li>
-                                Hello {loggedInUser.name}
-                            </li>
-                            <li>
-                                <img src={loggedInUser.avatarURL} alt={`Avatar of ${loggedInUser.name}`} className='avatar-nav'/>
-                            </li>
-                            <li>
-                                <NavLink to='/login' activeClassName='active'>
-                                    Logout
-                                </NavLink>
-                            </li>
-                        </Fragment>
-                        )}
                 </ul>
+
+                {loggedInUser !== '' && (
+                <ul>
+                    <li className='right'>
+                        Hello {loggedInUser.name}
+                    </li>
+                    <li className='right'>
+                        <img src={loggedInUser.avatarURL} alt={`Avatar of ${loggedInUser.name}`} className='avatar-nav'/>
+                    </li>
+                    <li className='right'>
+                        <NavLink to='/login'>
+                            Logout
+                        </NavLink>
+                    </li>
+                </ul>
+                )}
+
             </nav>
         )
     }
