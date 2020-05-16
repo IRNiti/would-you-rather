@@ -17,8 +17,11 @@
 
 .nav ul {
   display: flex;
-  width: 50%;
-  position: relative;
+}
+
+.nav-right {
+  position: absolute;
+  right: 40px;
 }
 
 li {
@@ -45,16 +48,6 @@ li {
 
 .center {
   text-align: center;
-}
-
-.left {
-  float: left;
-  position: relative;
-}
-
-.right {
-  float: right;
-  position: relative;
 }
 
 .btn {

@@ -7,7 +7,7 @@ class Nav extends Component {
         const { loggedInUser } = this.props
         return (
             <nav className='nav'>
-                <ul className='left'>
+                <ul>
                     <li>
                         <NavLink to='/' exact activeClassName='active'>
                             Home
@@ -26,14 +26,14 @@ class Nav extends Component {
                 </ul>
 
                 {loggedInUser !== '' && (
-                <ul>
-                    <li className='right'>
+                <ul className='nav-right'>
+                    <li>
                         Hello {loggedInUser.name}
                     </li>
-                    <li className='right'>
+                    <li>
                         <img src={loggedInUser.avatarURL} alt={`Avatar of ${loggedInUser.name}`} className='avatar-nav'/>
                     </li>
-                    <li className='right'>
+                    <li>
                         <NavLink to='/login'>
                             Logout
                         </NavLink>

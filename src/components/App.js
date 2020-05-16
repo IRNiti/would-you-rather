@@ -30,9 +30,9 @@ class App extends Component {
 					<Nav />
 					{this.props.loading === true ?
 								null :
-								<div>
+
 									<Login />
-								</div>
+
 					}
 				</Fragment>
 			</Router>
