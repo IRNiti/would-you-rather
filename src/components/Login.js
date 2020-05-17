@@ -1,11 +1,12 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { setAuthedUser } from '../actions/authedUser'
-import { withRouter } from 'react-router-dom'
+import { Redirect } from 'react-router-dom'
 
 class Login extends Component {
 	state = {
-		authedUser: ''
+		authedUser: '',
+		toHome: false
 	}
 
 	handleChange = (event) => {
@@ -15,11 +16,12 @@ class Login extends Component {
 		}))
 	}
 
-	// todo: figure out bug with redirecting to home page after login
 	login = (event) => {
 		event.preventDefault()
 		this.props.dispatch(setAuthedUser(this.state.authedUser))
-		//this.props.history.push('/')
+		this.setState(() => ({
+			toHome: true
+		}))
 	}
 
 	// maybe not ideal to set state in componentDidMount since triggers another render
@@ -32,8 +34,14 @@ class Login extends Component {
 	}
 
 	render(){
+
+		if(this.state.toHome === true){
+			return <Redirect to='/' />
+		}
+
 		const { users } = this.props
 		const { authedUser } = this.state
+
 		return(
 			<div className="card card-single center">
 				<div className="card-header">
@@ -63,4 +71,4 @@ function mapStateToProps({users}){
 	}
 }
 
-export default withRouter(connect(mapStateToProps)(Login))
+export default connect(mapStateToProps)(Login)
