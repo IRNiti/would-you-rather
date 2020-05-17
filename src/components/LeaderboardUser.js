@@ -4,7 +4,7 @@ export default function LeaderboardUser(props){
     const answers = Object.keys(props.user.answers).length
     const questions = props.user.questions.length
     return(
-        <div className='card card-single'>
+        <div className='card card-leaderboard'>
             <div className='question-detail'>
                 <img src={props.user.avatarURL} alt={`Avatar of ${props.user.name}`} className='avatar'/>
                 <div className='vl'/>
@@ -12,11 +12,14 @@ export default function LeaderboardUser(props){
                     <h3 className='card-title'>{props.user.name}</h3>
                     <div className='leaderboard-results'>
                         <div className='leaderboard-line'>
-                            <p className='left'>Answered questions</p>
-                            <p className='right'>{answers}</p>
+                            <p>Answered questions</p>
+                            <p>{answers}</p>
                         </div>
                         <div className='hb'/>
-                        <p>{`Created questions: ${questions}`}</p>
+                        <div className='leaderboard-line'>
+                            <p>Created questions</p>
+                            <p>{questions}</p>
+                        </div>
                     </div>
                 </div>
                 <div className='vl'/>

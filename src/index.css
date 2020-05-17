@@ -43,6 +43,11 @@
   margin-bottom: 5px;
 }
 
+.card-leaderboard {
+  width: 70%;
+  margin: 5px auto;
+}
+
 .card-option {
   margin-bottom: 5px;
   padding: 10px;
@@ -77,15 +82,8 @@
 }
 
 .leaderboard-line {
-  display: inline;
-}
-
-.left {
-  float: left;
-}
-
-.right {
-  
+  display: flex;
+  justify-content: space-between;
 }
 
 li {
