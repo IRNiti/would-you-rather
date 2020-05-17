@@ -14,14 +14,11 @@ class App extends Component {
 	componentDidMount(){
 		this.props.dispatch(handleInitialData())
 	}
-	// <PrivateRoute path='/' exact component={QuestionListCont}/>
-	// <PrivateRoute path='/question/:id'  component={QuestionVote}/>
-	// <Route path='/login' component={Login}/>
 
 	render(){
 		const matchInput = {
 			params : {
-				id : 'loxhs1bqm25b708cmbf3g'
+				id : '8xf0y6ziyjabvozdd253nd'
 			}
 		}
 		return(
@@ -30,9 +27,13 @@ class App extends Component {
 					<Nav />
 					{this.props.loading === true ?
 								null :
-
-									<Login />
-
+								<div>
+									<PrivateRoute path='/' exact component={QuestionListCont}/>
+									<PrivateRoute path='/question/:id'  component={QuestionCont}/>
+									<PrivateRoute path='/leaderboard'  component={Leaderboard}/>
+									<PrivateRoute path='/add'  component={NewQuestion}/>
+									<Route path='/login' component={Login}/>
+								</div>
 					}
 				</Fragment>
 			</Router>
