@@ -28,35 +28,46 @@ class QuestionVote extends Component {
         const {author, question} = this.props
 
         return(
-            <div>
-                <p>{author.name} asks: </p>
-                <img src={author.avatarURL} alt={`Avatar of ${author.name}`} className='avatar'/>
-                <h3>Would you rather... </h3>
-                <form onSubmit={this.handleSubmit}>
-                    <div>
-                    <label>
-                        <input
-                            type="radio"
-                            name="question"
-                            value="optionOne"
-                            onChange={this.handleChange}
-                        />
-                        {question.optionOne.text}
-                    </label>
+            <div className='card card-single'>
+                <div className="card-header">
+                    <p>{author.name} asks: </p>
+                </div>
+                <div className='question-detail'>
+                    <img src={author.avatarURL} alt={`Avatar of ${author.name}`} className='avatar'/>
+                    <div className='vl'/>
+                    <div className='question center'>
+                        <h3>Would you rather... </h3>
+                        <form onSubmit={this.handleSubmit}>
+                            <div>
+                            <label>
+                                <input
+                                    type="radio"
+                                    name="question"
+                                    value="optionOne"
+                                    onChange={this.handleChange}
+                                />
+                                <div className='question-option'>
+                                    {question.optionOne.text}
+                                </div>
+                            </label>
+                            </div>
+                            <div>
+                            <label>
+                                <input
+                                    type="radio"
+                                    name="question"
+                                    value="optionTwo"
+                                    onChange={this.handleChange}
+                                />
+                                <div className='question-option'>
+                                    {question.optionTwo.text}
+                                </div>
+                            </label>
+                            </div>
+                            <button type='submit' className='btn btn-primary'>Submit</button>
+                        </form>
                     </div>
-                    <div>
-                    <label>
-                        <input
-                            type="radio"
-                            name="question"
-                            value="optionTwo"
-                            onChange={this.handleChange}
-                        />
-                        {question.optionTwo.text}
-                    </label>
-                    </div>
-                    <button type='submit'>Submit</button>
-                </form>
+                </div>
             </div>
         )
     }

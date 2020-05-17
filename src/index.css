@@ -11,15 +11,6 @@
   padding: 20px;
 }
 
-.vl {
-  display: block;
-  border: 0;
-  border-left: 1px solid #ccc;
-  margin: 1em 0;
-  padding: 0;
-  height: 200px;
-}
-
 .avatar-nav {
   height: 25px;
   border-radius: 25px;
@@ -39,7 +30,7 @@
   position: relative;
 }
 
-.card-login {
+.card-single {
   width: 60%;
   margin: auto;
 }
@@ -87,4 +78,18 @@ li {
 
 .question-detail {
   display: flex;
+}
+
+.question-option {
+  display: inline;
+  padding: 10px;
+}
+
+.vl {
+  display: block;
+  border: 0;
+  border-left: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0;
+  height: 200px;
 }

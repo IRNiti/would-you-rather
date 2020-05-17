@@ -35,7 +35,7 @@ class Login extends Component {
 		const { users } = this.props
 		const { authedUser } = this.state
 		return(
-			<div className="card card-login center">
+			<div className="card card-single center">
 				<div className="card-header">
 					<h3>Welcome to the Would You Rather App!</h3>
 					<p>Please sign in to continue</p>
