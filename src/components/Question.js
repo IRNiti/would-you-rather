@@ -7,7 +7,6 @@ class Question extends Component{
         const {question, users, id} = this.props
         return(
             <div className='card card-question'>
-
                     <div className="card-header">
                         <p>{users[question.author].name} asks: </p>
                     </div>

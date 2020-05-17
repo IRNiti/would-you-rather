@@ -16,11 +16,6 @@ class App extends Component {
 	}
 
 	render(){
-		const matchInput = {
-			params : {
-				id : '8xf0y6ziyjabvozdd253nd'
-			}
-		}
 		return(
 			<Router>
 				<Fragment>
