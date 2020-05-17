@@ -12,8 +12,8 @@ class QuestionListCont extends Component {
             <div>
                 <Tabs>
                     <TabList>
-                        <Tab>Unanswered</Tab>
-                        <Tab>Answered</Tab>
+                        <Tab>Unanswered Questions</Tab>
+                        <Tab>Answered Questions</Tab>
                     </TabList>
 
                     <TabPanel>

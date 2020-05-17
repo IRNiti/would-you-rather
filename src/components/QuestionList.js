@@ -6,7 +6,6 @@ class QuestionList extends Component {
     render() {
         return (
             <div>
-                <p>Question List:</p>
                 <ul>
                     {this.props.questions.map((q) => (
                         <Question key={q} id={q}/>
