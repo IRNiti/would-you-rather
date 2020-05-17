@@ -2,18 +2,18 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { handleSubmitNewQuestion } from '../actions/questions'
 import serializeForm from 'form-serialize'
+import { Redirect } from 'react-router-dom'
 
 class NewQuestion extends Component {
     state = {
         optionOne: '',
-        optionTwo: ''
+        optionTwo: '',
+        toHome: false
     }
 
     handleChange = (event) => {
         const input = event.target.value
         const field = event.target.name
-        console.log(input)
-        console.log(event.target)
         this.setState(() => ({
             [field]: input
         }))
@@ -30,11 +30,17 @@ class NewQuestion extends Component {
         this.props.dispatch(handleSubmitNewQuestion(question))
         this.setState(() => ({
             optionOne: '',
-            optionTwo: ''
+            optionTwo: '',
+            toHome: true
         }))
     }
 
     render() {
+        
+        if(this.state.toHome === true){
+            return <Redirect to='/' />
+        }
+
         return(
             <div className='card card-single'>
                 <div className="card-header">
