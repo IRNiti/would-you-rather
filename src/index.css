@@ -5,9 +5,9 @@
 .avatar {
   border-radius: 50%;
   display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 30%;
+  margin: auto;
+  max-width: 250px;
+  max-height: 250px;
   padding: 20px;
 }
 
@@ -16,6 +16,10 @@
   border-radius: 25px;
   margin-right: 10px;
   margin-left: 10px;
+}
+
+.badge {
+  margin-left: 5px;
 }
 
 .btn {
@@ -30,14 +34,19 @@
   position: relative;
 }
 
-.card-single {
-  width: 60%;
-  margin: auto;
-}
-
 .card-question {
   width: 60%;
   margin-bottom: 5px;
+}
+
+.card-option {
+  margin-bottom: 5px;
+  padding: 10px;
+}
+
+.card-single {
+  width: 70%;
+  margin: auto;
 }
 
 .center {
@@ -91,5 +100,6 @@ li {
   border-left: 1px solid #ccc;
   margin: 1em 0;
   padding: 0;
-  height: 200px;
+  height:auto;
+  overflow:visible;
 }

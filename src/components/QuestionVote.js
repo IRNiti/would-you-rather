@@ -36,7 +36,7 @@ class QuestionVote extends Component {
                     <img src={author.avatarURL} alt={`Avatar of ${author.name}`} className='avatar'/>
                     <div className='vl'/>
                     <div className='question center'>
-                        <h3>Would you rather... </h3>
+                        <h3 className='card-title'>Would you rather... </h3>
                         <form onSubmit={this.handleSubmit}>
                             <div>
                             <label>

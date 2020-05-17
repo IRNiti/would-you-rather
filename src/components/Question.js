@@ -15,7 +15,7 @@ class Question extends Component{
                         <img src={users[question.author].avatarURL} alt={`Avatar of ${users[question.author].name}`} className='avatar'/>
                         <div className='vl'/>
                         <div className='question center'>
-                            <h5>Would you rather: </h5>
+                            <h5 className='card-title'>Would you rather: </h5>
                             <p>...{question.optionOne.text}...</p>
                             <Link to={`/question/${id}`} className='link-question'>
                                 <button className='btn btn-primary'>View Poll</button>

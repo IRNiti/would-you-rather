@@ -7,13 +7,20 @@ class QuestionResult extends Component {
         const {author, question, answer, totalVotes} = this.props
         const options = ['optionOne', 'optionTwo']
         return(
-            <div>
-                <p>Asked by {author.name}</p>
-                <img src={author.avatarURL} alt={`Avatar of ${author.name}`} className='avatar'/>
-                <h3>Results:</h3>
-                {options.map((option) => (
-                    <QuestionResultOption totalVotes={totalVotes} answer={answer} question={question} option={option}/>
-                ))}
+            <div className='card card-single'>
+                <div className="card-header">
+                    <p>Asked by {author.name}</p>
+                </div>
+                <div className='question-detail'>
+                    <img src={author.avatarURL} alt={`Avatar of ${author.name}`} className='avatar'/>
+                    <div className='vl'/>
+                    <div className='question center'>
+                        <h3 className='card-title'>Results:</h3>
+                        {options.map((option) => (
+                            <QuestionResultOption key={option} totalVotes={totalVotes} answer={answer} question={question} option={option}/>
+                        ))}
+                    </div>
+                </div>
             </div>
         )
     }
