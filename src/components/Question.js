@@ -13,6 +13,7 @@ class Question extends Component{
                     </div>
                     <div className='question-detail'>
                         <img src={users[question.author].avatarURL} alt={`Avatar of ${users[question.author].name}`} className='avatar'/>
+                        <div className='vl'/>
                         <div className='question center'>
                             <h5>Would you rather: </h5>
                             <p>...{question.optionOne.text}...</p>
