@@ -35,10 +35,10 @@ class QuestionVote extends Component {
                 <div className='question-detail'>
                     <img src={author.avatarURL} alt={`Avatar of ${author.name}`} className='avatar'/>
                     <div className='vl'/>
-                    <div className='question center'>
-                        <h3 className='card-title'>Would you rather... </h3>
+                    <div className='question'>
+                        <h3 className='card-title center'>Would you rather... </h3>
                         <form onSubmit={this.handleSubmit}>
-                            <div>
+                            <div className='question-vote'>
                             <label>
                                 <input
                                     type="radio"
@@ -51,7 +51,7 @@ class QuestionVote extends Component {
                                 </div>
                             </label>
                             </div>
-                            <div>
+                            <div className='question-vote'>
                             <label>
                                 <input
                                     type="radio"

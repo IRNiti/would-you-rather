@@ -134,6 +134,10 @@ li {
   padding: 10px;
 }
 
+.question-vote {
+  margin-left: 5px;
+}
+
 .vl {
   display: block;
   border: 0;
