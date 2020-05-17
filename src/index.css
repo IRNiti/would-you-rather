@@ -22,6 +22,10 @@
   margin-left: 5px;
 }
 
+.badge-score {
+  margin: 37%;
+}
+
 .btn {
   text-transform: uppercase;
   margin: 35px auto;
@@ -44,6 +48,11 @@
   padding: 10px;
 }
 
+.card-score {
+  margin: 20px;
+  width: 30%;
+}
+
 .card-single {
   width: 70%;
   margin: auto;
@@ -51,6 +60,32 @@
 
 .center {
   text-align: center;
+}
+
+.hb {
+  display: block;
+  border: 0;
+  border-bottom: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0;
+  height:auto;
+  overflow:visible;
+}
+
+.leaderboard-results {
+  margin-top: 10%;
+}
+
+.leaderboard-line {
+  display: inline;
+}
+
+.left {
+  float: left;
+}
+
+.right {
+  
 }
 
 li {
