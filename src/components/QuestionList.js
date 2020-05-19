@@ -18,19 +18,19 @@ class QuestionList extends Component {
 
 function mapStateToProps({users, questions, authedUser}, {answered}){
     let filteredQuestions = []
+    let sortedQuestions = []
 
     if(authedUser) {
-        const answeredQuestions = Object.keys(users[authedUser].answers)
-        if (answered === true) {
-            filteredQuestions = answeredQuestions
-        } else {
-            filteredQuestions = Object.keys(questions).filter((qid) => !answeredQuestions.includes(qid))
+        filteredQuestions = Object.keys(users[authedUser].answers)
+        if (!answered) {
+            filteredQuestions = Object.keys(questions).filter((qid) => !filteredQuestions.includes(qid))
         }
+        sortedQuestions = filteredQuestions.sort((a,b) => questions[b].timestamp - questions[a].timestamp)
     }
 
 
     return{
-        questions: filteredQuestions
+        questions: sortedQuestions
     }
 }
 
