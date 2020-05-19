@@ -6,7 +6,6 @@ import NotFound from './NotFound'
 
 class QuestionCont extends Component{
     render(){
-        console.log('props in question cont: ', this.props)
         return(
             <div>
                 {this.props.question ? (
