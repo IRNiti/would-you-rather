@@ -6,7 +6,7 @@ import { Redirect } from 'react-router-dom'
 class Login extends Component {
 	state = {
 		authedUser: '',
-		toHome: false
+		shouldRedirect: false
 	}
 
 	handleChange = (event) => {
@@ -20,12 +20,13 @@ class Login extends Component {
 		event.preventDefault()
 		this.props.dispatch(setAuthedUser(this.state.authedUser))
 		this.setState(() => ({
-			toHome: true
+			shouldRedirect: true
 		}))
 	}
 
 	// maybe not ideal to set state in componentDidMount since triggers another render
 	componentDidMount() {
+		console.log('props in login: ', this.props)
 		const { users } = this.props
 		this.setState(() => ({
 			authedUser: users[Object.keys(users)[0]].id
@@ -35,8 +36,8 @@ class Login extends Component {
 
 	render(){
 
-		if(this.state.toHome === true){
-			return <Redirect to='/' />
+		if(this.state.shouldRedirect === true){
+			return <Redirect to={this.props.location.state.redirectTo} />
 		}
 
 		const { users } = this.props
