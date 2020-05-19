@@ -36,7 +36,11 @@ class Login extends Component {
 	render(){
 
 		if(this.state.shouldRedirect === true){
-			return <Redirect to={this.props.location.state.redirectTo} />
+			if(this.props.location.state){
+				return <Redirect to={this.props.location.state.redirectTo} />
+			} else {
+				return <Redirect to='/' />
+			}
 		}
 
 		const { users } = this.props
