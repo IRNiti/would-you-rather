@@ -26,7 +26,6 @@ class Login extends Component {
 
 	// maybe not ideal to set state in componentDidMount since triggers another render
 	componentDidMount() {
-		console.log('props in login: ', this.props)
 		const { users } = this.props
 		this.setState(() => ({
 			authedUser: users[Object.keys(users)[0]].id
