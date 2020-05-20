@@ -1,5 +1,6 @@
 import React from 'react'
 
+// Presentational component displaying information for a given user in the leaderboard
 export default function LeaderboardUser(props){
     const answers = Object.keys(props.user.answers).length
     const questions = props.user.questions.length

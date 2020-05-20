@@ -4,6 +4,7 @@ import { handleSubmitNewQuestion } from '../actions/questions'
 import serializeForm from 'form-serialize'
 import { Redirect } from 'react-router-dom'
 
+// Connected component handling functionality to create a new question
 class NewQuestion extends Component {
     state = {
         optionOne: '',

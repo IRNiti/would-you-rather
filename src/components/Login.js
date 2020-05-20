@@ -3,32 +3,34 @@ import { connect } from 'react-redux'
 import { setAuthedUser } from '../actions/authedUser'
 import { Redirect } from 'react-router-dom'
 
+// Connected component setting the authenticated user in the Redux store
 class Login extends Component {
+	// currentUser: keep track of user selection from form
+	// shouldRedirect: store state to redirect after login is complete
 	state = {
-		authedUser: '',
+		currentUser: '',
 		shouldRedirect: false
 	}
 
 	handleChange = (event) => {
 		const input = event.target.value
 		this.setState(() =>({
-			authedUser: input
+			currentUser: input
 		}))
 	}
 
 	login = (event) => {
 		event.preventDefault()
-		this.props.dispatch(setAuthedUser(this.state.authedUser))
+		this.props.dispatch(setAuthedUser(this.state.currentUser))
 		this.setState(() => ({
 			shouldRedirect: true
 		}))
 	}
 
-	// maybe not ideal to set state in componentDidMount since triggers another render
 	componentDidMount() {
 		const { users } = this.props
 		this.setState(() => ({
-			authedUser: users[Object.keys(users)[0]].id
+			currentUser: users[Object.keys(users)[0]].id
 		}))
 		this.props.dispatch(setAuthedUser(null))
 	}
@@ -44,7 +46,7 @@ class Login extends Component {
 		}
 
 		const { users } = this.props
-		const { authedUser } = this.state
+		const { currentUser } = this.state
 
 		return(
 			<div className="card card-single center">
@@ -55,7 +57,7 @@ class Login extends Component {
 				<div className="card-body">
 					<form onSubmit={this.login}>
 						<div>
-							<select value={authedUser} onChange={this.handleChange}>
+							<select value={currentUser} onChange={this.handleChange}>
 								{Object.keys(users).map((userId) =>(
 									<option value={userId} key={userId}>{users[userId].name}</option>
 								))}
@@ -65,7 +67,7 @@ class Login extends Component {
 					</form>
 				</div>
 			</div>
-			)
+		)
 	}
 }
 

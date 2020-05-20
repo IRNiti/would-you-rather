@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import LeaderboardUser from './LeaderboardUser'
 
+// Connected component sorting users by score and displaying the list of users
 class Leaderboard extends Component {
     render(){
         const {users} = this.props

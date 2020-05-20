@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import Question from './Question'
 
+// Connected component that will display a list of answered or unanswered questions
 class QuestionList extends Component {
     render() {
         return (

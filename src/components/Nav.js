@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { NavLink } from 'react-router-dom'
 
+// Connected component displaying the navigation bar and the currently logged in user
 class Nav extends Component {
     render() {
         const { loggedInUser } = this.props

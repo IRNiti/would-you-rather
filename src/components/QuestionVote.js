@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { handleSubmitAnswer } from '../actions/questions'
 
+// Connected component allowing users to vote for an option for a given question
 class QuestionVote extends Component {
     state = {
         selection: ''

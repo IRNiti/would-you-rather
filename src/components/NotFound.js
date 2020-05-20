@@ -1,5 +1,6 @@
 import React from 'react'
 
+// Presentational component displaying 404 Not Found page
 export default function NotFound(){
     return(
         <div className='center'>

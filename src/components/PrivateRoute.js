@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Route, Redirect, withRouter } from 'react-router-dom'
 import { connect } from 'react-redux'
 
+// Connected component to handle redirect to login when users are not authenticated
 class PrivateRoute extends Component {
     render(){
         const { component : Component, authedUser, ...rest } = this.props

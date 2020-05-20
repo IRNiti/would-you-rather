@@ -4,6 +4,10 @@ import QuestionVote from './QuestionVote'
 import QuestionResult from './QuestionResult'
 import NotFound from './NotFound'
 
+// Connected component displaying either a question poll, result or 404 page based on the question status
+// if a question has been answered, show question result
+// if a question has not been answered, show question poll
+// if a question id is not found in the database, show a 404 Not Found page
 class QuestionCont extends Component{
     render(){
         return(
